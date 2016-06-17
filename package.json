@@ -1,0 +1,29 @@
+{
+  "name": "react-example",
+  "version": "1.0.0",
+  "description": "Example of embedding formio in a React application",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack && http-server -p 8000",
+    "build": "webpack -p",
+    "dev": "webpack-dev-server --inline --hot --devtool source-map --config webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "json-loader": "^0.5.4",
+    "jsx-loader": "^0.13.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-formio": "^0.3.0"
+  }
+}
