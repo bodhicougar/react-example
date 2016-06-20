@@ -24,6 +24,6 @@
   "dependencies": {
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
-    "react-formio": "^0.3.0"
+    "react-formio": "^0.3.1"
   }
 }
