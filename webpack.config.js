@@ -12,6 +12,10 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
+        loader: 'jsx-loader?insertPragma=React.DOM&harmony'
+      },
+      {
+        test: /\.jsx?$/,
         loader: 'babel',
         exclude: /node_modules/,
         query: {
@@ -26,12 +30,13 @@ module.exports = {
     resolve: {
       extensions: ['', '.js', '.jsx'],
       alias: {
-        requirejs$:  "./dist/"
+        requirejs$:  "./dist/",
+        "react": __dirname + '/node_modules/react',
+        "react-dom": __dirname + '/node_modules/react-dom'
       },
     },
     noParse: [
       /node_modules\/formiojs\//,
-    ],
-
+    ]
   }
 }
