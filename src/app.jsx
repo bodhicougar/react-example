@@ -4,15 +4,14 @@ var Formio = require('react-formio/src/Formio.jsx');
 
 var form = require('./complex.json');
 
-var outputChange = function(data) {
-  console.log(data);
+var formChange = function(submission) {
+  console.log('change', submission);
 }
 
 var formSubmit = function(submission) {
-  console.log('submit');
-  console.log(submission);
+  console.log('submit', submission);
 }
 
 ReactDOM.render(
-  <Formio src="https://examples.form.io/components" onChange={outputChange} onFormSubmit={formSubmit}></Formio>, document.getElementById('formio')
+  <Formio src="https://examples.form.io/components" onChange={formChange} onFormSubmit={formSubmit}></Formio>, document.getElementById('formio')
 );
