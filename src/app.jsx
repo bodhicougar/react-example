@@ -3,13 +3,14 @@ var ReactDOM = require('react-dom');
 var Formio = require('react-formio/src/Formio.jsx');
 
 var form = require('./complex.json');
+
 var data = {
   textField: 'My Value',
   number: 300
 };
 
-var formChange = function(submission) {
-  console.log('change', submission.data);
+var formChange = function(submission, key, value) {
+  console.log('change', submission.data, key, value);
 }
 
 var formSubmit = function(submission) {
@@ -35,5 +36,5 @@ var onElementRender = function(component, element) {
 };
 
 ReactDOM.render(
-  <Formio src="https://examples.form.io/components" submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
+  <Formio form={form} submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
 );
