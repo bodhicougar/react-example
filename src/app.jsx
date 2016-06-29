@@ -2,6 +2,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Formio = require('react-formio/src/Formio.jsx');
 
+// Add a custom component
+FormioComponents.checkio = require('./checkio.jsx');
+
 var form = require('./complex.json');
 
 var data = {
@@ -36,5 +39,5 @@ var onElementRender = function(component, element) {
 };
 
 ReactDOM.render(
-  <Formio form={form} submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
+  <Formio src="https://examples.form.io/checkio" submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
 );
