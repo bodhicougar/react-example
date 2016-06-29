@@ -38,6 +38,19 @@ var onElementRender = function(component, element) {
   }
 };
 
+// This form has all components
+// https://examples.form.io/components
+
+// This form has a custom component
+// https://examples.form.io/checkio
+
+// This form has custom conditionals
+// https://examples.form.io/customcond
+
+// This form can hide fields based on a hidden component
+// https://examples.form.io/hidden
+// set the data above to "hidden": "one" or "hidden": "two" to see the different fields.
+
 ReactDOM.render(
-  <Formio src="https://examples.form.io/checkio" submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
+  <Formio src="https://examples.form.io/customcond" submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
 );
