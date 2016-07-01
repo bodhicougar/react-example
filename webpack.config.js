@@ -23,6 +23,14 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      },
+      {
+        test: /\.png$|\.gif$|\.svg|\.ttf|\.woff|\.eot/,
+        loader: "file-loader"
+      },
+      {
         test: /\.json$/,
         loader: 'json'
       }
