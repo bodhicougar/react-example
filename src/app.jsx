@@ -1,12 +1,12 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Formio = require('react-formio/src/Formio.jsx');
+var Formio = require('react-formio');
 
 require('react-widgets/dist/css/react-widgets.css');
 require('react-formio/formio.css');
 
 // Add a custom component
-FormioComponents.checkio = require('./checkio.jsx');
+//FormioComponents.checkio = require('./checkio.jsx');
 
 var form = require('./complex.json');
 
@@ -53,5 +53,5 @@ var onElementRender = function(component, element) {
 // set the data above to "hidden": "one" or "hidden": "two" to see the different fields.
 
 ReactDOM.render(
-  <Formio src="https://examples.form.io/components" submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
+  <Formio src="https://examples.form.io/wizard" submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
 );

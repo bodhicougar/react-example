@@ -12,10 +12,6 @@ module.exports = {
       },
       {
         test: /\.jsx?$/,
-        loader: 'jsx-loader?insertPragma=React.DOM&harmony'
-      },
-      {
-        test: /\.jsx?$/,
         loader: 'babel',
         exclude: /node_modules/,
         query: {
