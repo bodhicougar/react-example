@@ -1,6 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Formio = require('react-formio');
+var {Formio, FormioGrid} = require('react-formio');
+var Formiojs = require('formiojs');
 
 require('react-widgets/dist/css/react-widgets.css');
 require('react-formio/formio.css');
@@ -8,7 +9,7 @@ require('react-formio/formio.css');
 // Add a custom component
 //FormioComponents.checkio = require('./checkio.jsx');
 
-var form = require('./complex.json');
+var form = require('./forms/complex.json');
 
 var data = {
 };
@@ -52,6 +53,45 @@ var onElementRender = function(component, element) {
 // https://examples.form.io/hidden
 // set the data above to "hidden": "one" or "hidden": "two" to see the different fields.
 
+//Formiojs.setBaseUrl('http://api.lvh.me:3000');
+//<Formio src=https://nuvarpfhvrxjvwm.form.io/user/registration onFormSubmit={onSubmit} />, document.getElementById('formio')
+//<FormioGrid src="https://nuvarpfhvrxjvwm.form.io/user" onButtonClick={onRow} />, document.getElementById('formio')
+var onRow = function(type, id) {
+  console.log(type, id);
+}
+
+const constants = {
+  FORM_SRC: "https://nuvarpfhvrxjvwm.form.io/user/info"
+};
+var Wrapper = React.createClass({
+  displayName: 'Wrapper',
+  getInitialState: function() {
+    return {
+      submission: {
+        data: {
+          textField: 'test'
+        }
+      }
+    }
+  },
+  componentDidMount: function() {
+    setTimeout(function() {
+      this.setState({
+        submission: {
+          data: {
+            textField: 'updated'
+          }
+        }
+      })
+    }.bind(this), 3000);
+  },
+  render: function() {
+    return (
+      <Formio src="https://examples.form.io/components" onChange={formChange} />
+    );
+  }
+});
+
 ReactDOM.render(
-  <Formio src="https://examples.form.io/wizard" submission={{data: data }} onChange={formChange} onFormSubmit={formSubmit} onElementRender={onElementRender}></Formio>, document.getElementById('formio')
+  <Formio src="https://examples.form.io/components" onChange={formChange} />, document.getElementById('formio')
 );

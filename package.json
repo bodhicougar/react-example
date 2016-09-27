@@ -26,8 +26,9 @@
   },
   "dependencies": {
     "formio-utils": "^0.1.9",
-    "react": "^15.1.0",
-    "react-dom": "^15.1.0",
-    "react-formio": "^0.4.2"
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-formio": "^0.8.2",
+    "react-formio-helper": "0.0.2"
   }
 }

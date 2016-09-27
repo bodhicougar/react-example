@@ -38,9 +38,6 @@ module.exports = {
         "react": __dirname + '/node_modules/react',
         "react-dom": __dirname + '/node_modules/react-dom'
       },
-    },
-    noParse: [
-      /node_modules\/formiojs\//,
-    ]
+    }
   }
 }
